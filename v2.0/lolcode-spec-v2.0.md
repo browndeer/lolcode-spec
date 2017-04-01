@@ -607,9 +607,9 @@ IM IN YR LOOP [TIL|WILE <expression>]
 IM OUTTA YR <label>
 ```
 
-The TIL <expression> evaluates the expression as a TROOF: if it evaluates as
+The `TIL <expression>` evaluates the expression as a TROOF: if it evaluates as
 FAIL, the loop continues once more, if not, then loop execution stops, and
-continues after the matching IM OUTTA YR <label>. The WILE <expression> is the
+continues after the matching IM OUTTA YR LOOP. The `WILE <expression>` is the
 converse: if the expression is WIN, execution continues, otherwise the loop
 exits.
 
@@ -621,9 +621,9 @@ IM IN YR LOOP <operation> <variable> [FRUM <expression>] [BY <expression>] TIL|W
 IM OUTTA YR LOOP
 ```
 
-Where <operation> may be UPPIN (increment) or NERFIN (decrement)
+Where *operation* may be UPPIN (increment) or NERFIN (decrement)
 or any other assignment operator, 
-the `FRUM` clause defines the intial value of <variable>, 
+the `FRUM` clause defines the intial value of *variable*, 
 and the `BY` clause provides the argument to the assignment operator.
 
 The iteration variabe is temporary, and local to the loop. 
@@ -732,8 +732,8 @@ WE HAS A <y> ITZ A NUMBAR AN ITZ 4.5
 WE HAS A <z> ITZ LOTZ A NUMBARS AN THAR IZ <n>
 ```
 
-Here <x>, <y> and <z> are a symmetric integer variable, a symmetric floating
-point variable initialized to 4.5, and a floating point array of size <n>,
+Here *x*, *y* and *z* are a symmetric integer variable, a symmetric floating
+point variable initialized to 4.5, and a floating point array of size *n*,
 respectively.  In each case the local values on a given PE may be accessed
 remotely by other PEs.
 
@@ -749,8 +749,8 @@ takes the form,
 TXT MAH BFF <k>, <statement>
 ```
 
-In this case, all references to a remote PE within <statement> will refer
-to PE <k>, and following the execution of <statement> remote predication ends.
+In this case, all references to a remote PE within *statement* will refer
+to PE *k*, and following the execution of statement remote predication ends.
 
 The second form predicates multiple statements and takes the form,
 
@@ -761,12 +761,12 @@ TTYL
 ```
 
 In this case, all references to a remote PE within each statement in
-<code-block> will refer to PE <k>.  Remote predication ends following the
+*code-block* will refer to PE *k*.  Remote predication ends following the
 closing statement `TTYL`.
 
 Symmetric variables belonging to a remote PE are referenced using the 
-prefix operator `UR`.  In the example below, the value of <x> is updated
-with the sum of <y> on the executing PE and the value of <z> on remote PE <k>.
+prefix operator `UR`.  In the example below, the value of *x* is updated
+with the sum of *y* on the executing PE and the value of *z* on remote PE *k*.
 The prefix operator `UR` may only be applied to symmetric variables.
 
 ```
@@ -780,8 +780,8 @@ multiple references to remote variables, for example,
 TXT MAH BFF <k>, UR <x> R PRODUKT OF UR <c> AN SUM OF <y> AN UR <z>
 ```
 
-Here the variable <x> on remote PE <k> is assigned the sum of <y> and the
-remote value of <z>, with the product multiplied by the remote value of <c>.
+Here the variable *x* on remote PE *k* is assigned the sum of *y* and the
+remote value of *z*, with the product multiplied by the remote value of *c*.
 
 It is optional to refer to a local variable with the prefix operator `MAH`
 so that expressions may read more clearly, for example,
