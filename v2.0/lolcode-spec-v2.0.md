@@ -835,7 +835,7 @@ Using a SPMD execution model, it is often necessary to ensure that each PE
 reaches the same point within a program before continuing.  The keyword `HUGZ`
 is used to create a barrier that must be entered by all PEs before any PE
 may continue.  In the example below, it is guaranteed that all PEs complete
-there update of <x> before proceeding to execute the rest of the program.
+there update of \<x> before proceeding to execute the rest of the program.
 
 ```
 UR <x> R SUM OF <y> AN <z>
