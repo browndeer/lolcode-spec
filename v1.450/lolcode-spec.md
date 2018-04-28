@@ -2,8 +2,6 @@
 
 WORKING DRAFT Fall 2018
 
-Provisional specification for community input before formal ratification.
-
 This is a working specification for LOLCODE version 1.450 and is based on the
 original version 1.2 specification (a work of genius)
 with elements from 2.0.  The changes include: static typing, 
