@@ -29,7 +29,7 @@ It is only intended for use in MSU's CSE 450
 * A command starts at the beginning of a line and a newline indicates the end
   of a command, except in special cases.
 
-* A newline will be Carriage Return (/13), a Line Feed (/10) or both (/13/10)
+* A newline will be Carriage Return (/r), a Line Feed (/n) or both (/r/n)
   depending on the implementing system. This is only in regards to LOLCODE 
   code itself, and does not indicate how these should be treated in strings or 
   files during execution.
