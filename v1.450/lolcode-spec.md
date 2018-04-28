@@ -54,7 +54,7 @@ It is only intended for use in MSU's CSE 450
     included as well.
 
 * A single-line comment is always terminated by a newline. Line continuation 
-  (...) and soft-command-breaks (,) after the comment (`BTW`) are ignored.
+  (`...`) and virtual newlines (`,`) after the comment (`BTW`) are ignored.
 
 * Line continuation and soft-command-breaks are ignored inside quoted strings.
   An unterminated string literal (no closing quote) will cause an error.
@@ -118,7 +118,11 @@ accessible after declaration.
 
 ### Naming
 
-Variable identifiers may be in all lowercase or uppercase letters (or a mixture of the two). They must begin with a letter and may be followed only by other letters, numbers, and underscores. No spaces, dashes, or other symbols are allowed. Variable identifiers are CASE SENSITIVE – "cheezburger", "CheezBurger" and "CHEEZBURGER" would all be different variables.
+Variable identifiers may be in all lowercase or uppercase letters (or a mixture of the two). 
+They must begin with a letter and may be followed only by other letters, numbers, and underscores. 
+No spaces, dashes, or other symbols are allowed. 
+Variable identifiers are CASE SENSITIVE – "cheezburger", "CheezBurger" and "CHEEZBURGER" 
+would all be different variables.
 
 ### Declaration and Assignment
 
@@ -552,9 +556,21 @@ OIC
 #### Case
 
 
-The LOLCODE keyword for switches is `WTF?`. The `WTF?` operates on the expression value for comparison. A comparison block is opened by `OMG` and must be a literal, not an expression. Each literal must be unique. The `OMG` block can be followed by any number of statements and may be terminated by a `GTFO`, which breaks to the end of the the `WTF` statement. If an `OMG` block is not terminated by a `GTFO`, then the next `OMG` block is executed as is the next until a `GTFO` or the end of the `WTF` block is reached. The optional default case, if none of the literals evaluate as true, is signified by `OMGWTF`.
+The LOLCODE keyword for switches is `WTF?`. The `WTF?` operates on the 
+expression value for comparison. A comparison block is opened by `OMG` 
+and must be a literal, not an expression. Each literal must be unique. 
+The `OMG` block can be followed by any number of statements and may be 
+terminated by a `GTFO`, which breaks to the end of the the `WTF` statement. 
+If an `OMG` block is not terminated by a `GTFO`, then the next `OMG` 
+block is executed as is the next until a `GTFO` or the end of the `WTF` 
+block is reached. The optional default case, if none of the literals 
+evaluate as true, is signified by `OMGWTF`.
+
+As the expression and the literals are compared by equality, their types
+must match.
 
 ```
+<expression>
 WTF?
   OMG <value literal>
     <code block>
