@@ -121,7 +121,7 @@ All variable scope, as of this version, is local to the enclosing function or to
 
 *(from 1.1)*
 
-Variable identifiers may be in all small or lowercase letters (or a mixture of the two). They must begin with a letter and may be followed only by other letters, numbers, and underscores. No spaces, dashes, or other symbols are allowed. Variable identifiers are CASE SENSITIVE – "cheezburger", "CheezBurger" and "CHEEZBURGER" would all be different variables.
+Variable identifiers may be in all lowercase or uppercase letters (or a mixture of the two). They must begin with a letter and may be followed only by other letters, numbers, and underscores. No spaces, dashes, or other symbols are allowed. Variable identifiers are CASE SENSITIVE – "cheezburger", "CheezBurger" and "CHEEZBURGER" would all be different variables.
 
 ### Declaration and Assignment
 
@@ -198,7 +198,7 @@ The colon may also introduce more verbose escapes enclosed within some form of
 bracket.
 
 * :{`<var>`} interpolates the current value of the enclosed variable, cast as a
-* string.
+  string.
 
 ### Arrays
 
@@ -368,8 +368,8 @@ To generate integer or floating point random numbers, the keywords
 For example,
 
 ```
-<var> R WHATEVR         BTW <var> is assigned a random integer
-<var> R WHATEVR         BTW <var> is assigned a random float
+<var> R WHATEVR          BTW <var> is assigned a random integer
+<var> R WHATEVAR         BTW <var> is assigned a random float
 ```
 
 ---
@@ -613,7 +613,7 @@ continues after the matching IM OUTTA YR LOOP. The `WILE <expression>` is the
 converse: if the expression is WIN, execution continues, otherwise the loop
 exits.
 
-Iteration loops inlcude clauses for defining the iteration, and take the form,
+Iteration loops include clauses for defining the iteration, and take the form,
 
 ```
 IM IN YR LOOP <operation> <variable> [FRUM <expression>] [BY <expression>] TIL|WILE <expression>
