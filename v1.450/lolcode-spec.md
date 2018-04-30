@@ -122,7 +122,7 @@ No spaces, dashes, or other symbols are allowed.
 Variable identifiers are CASE SENSITIVE – "cheezburger", "CheezBurger" and "CHEEZBURGER" 
 would all be different variables.
 
-### Declaration and Assignment
+### Declaration and Initialization
 
 Variables must be declared prior to use.  Variable declarations take the form, 
 `I HAS A <variable> ITZ A <type>`.  This maybe followed by `[AN] ITZ <value>` 
