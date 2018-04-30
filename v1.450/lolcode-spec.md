@@ -169,11 +169,6 @@ Casting a NUMBAR to a NUMBR truncates the decimal portion of the
 floating point number. A NUMBAR may have a leading hyphen (`-`) to signify a
 negative number.
 
-Casting of a string to a numerical type parses the string as if it were not in
-quotes. If there are any non-numerical, non-hyphen, non-period characters, then
-it results in an error. Casting WIN to a numerical type results in `1` or
-`1.0`; casting FAIL results in a `0` or `0.0`.
-
 
 ### Chars
 
