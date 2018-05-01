@@ -436,7 +436,7 @@ To accept input from the user, the expression is
 GIMMEH <type>
 ```
 
-where `<type>` is NUMBR, NUMBAR, LETTZ, or YARN.
+where `<type>` is NUMBR, NUMBAR, LETTZ, or TROOF.
 
 ---
 
