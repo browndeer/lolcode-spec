@@ -292,21 +292,20 @@ Note: none of the operators change any of their arguments, there only effect is 
 The basic math operators are unary or binary prefix operators.
 
 ```
-SUM OF <x> AN <y>       BTW +
-DIFF OF <x> AN <y>      BTW -
-PRODUKT OF <x> AN <y>   BTW *
-QUOSHUNT OF <x> AN <y>  BTW /
-MOD OF <x> AN <y>       BTW modulo
-BIGGR OF <x> AN <y>     BTW max
-SMALLR OF <x> AN <y>    BTW min
-FLIP Of <x>             BTW 1/x
+SUM OF <x> [AN] <y>       BTW +
+DIFF OF <x> [AN] <y>      BTW -
+PRODUKT OF <x> [AN] <y>   BTW *
+QUOSHUNT OF <x> [AN] <y>  BTW /
+BIGGR OF <x> [AN] <y>     BTW max
+SMALLR OF <x> [AN] <y>    BTW min
+FLIP OF <x>             BTW 1/x
 SQUAR OF <x>            BTW x*x
 ```
 
 `<x>` and `<y>` may each be expressions in the above, so mathematical operators
 can be nested and grouped indefinitely.
 
-Math operators require that the types on all arguments had the same type and that
+Math operators require that the types on all arguments have the same type and that
 type must be numerical (NUMBR or NUMBAR).
 
 
