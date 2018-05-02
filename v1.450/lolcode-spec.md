@@ -181,7 +181,6 @@ also take on a special meaning.
 
 * `:)` represents a newline (`\n`)
 * `:>` represents a tab (`\t`)
-* `:o` represents a bell (beep) (`\g`)
 * `:'` represents a literal single quote (`'`)
 * `::` represents a single literal colon (`:`)
 
