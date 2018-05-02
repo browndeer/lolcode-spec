@@ -296,17 +296,18 @@ SUM OF <x> [AN] <y>       BTW +
 DIFF OF <x> [AN] <y>      BTW -
 PRODUKT OF <x> [AN] <y>   BTW *
 QUOSHUNT OF <x> [AN] <y>  BTW /
+FLIP OF <x>               BTW 1/x
+SQUAR OF <x>              BTW x*x
 BIGGR OF <x> [AN] <y>     BTW max
 SMALLR OF <x> [AN] <y>    BTW min
-FLIP OF <x>             BTW 1/x
-SQUAR OF <x>            BTW x*x
 ```
 
 `<x>` and `<y>` may each be expressions in the above, so mathematical operators
 can be nested and grouped indefinitely.
 
 Math operators require that the types on all arguments have the same type and that
-type must be numerical (NUMBR or NUMBAR).
+type must be numerical (NUMBR or NUMBAR). The expression yield the type of its
+arguments.
 
 
 ### Logical Operators
@@ -322,8 +323,7 @@ ALL OF <x> [AN] <y> ... MKAY  BTW variable arity AND
 ANY OF <x> [AN] <y> ... MKAY  BTW variable arity OR
 ```
 
-`<x>` and `<y>` in the expression syntax above are automatically cast as 
-TROOF values if they are not already so.
+`<x>` and `<y>` in the expression syntax above must be TROOFs.
 
 Short circuited evaluation applies, meaning that the operands are 
 lazily evaluated as need to determine the result.
@@ -333,14 +333,14 @@ lazily evaluated as need to determine the result.
 Comparison is done with two binary equality operators:
 
 ```
-BOTH SAEM <x> [AN] <y>   		BTW WIN if x == y
+SAEM <x> [AN] <y>   		        BTW WIN if x == y
 DIFFRINT <x> [AN] <y>    		BTW WIN if x != y
-FURST SMALLR <x> [AN] <y>		BTW WIN if x < y
-FURST BIGGR  <x> [AN] <y>		BTW WIN if x > y
+FURSTSMALLR <x> [AN] <y>		BTW WIN if x < y
+FURSTBIGGR  <x> [AN] <y>		BTW WIN if x > y
 ```
 
 Comparison operators will always yield FAIL if the types of the two operands
-do not have the same type.
+do not have the same type. 
 
 ### Concatenation Operator
 
@@ -424,7 +424,7 @@ unless the final token is terminated with an exclamation point (`!`),
 in which case the carriage return is suppressed.
 
 ```
-VISIBLE <expression> [<expression> ...][!]
+VISIBLE <expression> [[AN] <expression> ...][!]
 ```
 
 To accept input from the user, the expression is
