@@ -285,6 +285,8 @@ with the following syntax:
 <operator> <expr1> [[[AN] <expr2>] [AN] <expr3> ...] MKAY
 ```
 
+Note: none of the operators change any of their arguments, there only effect is what they yield/return. 
+
 ### Math Operators
 
 The basic math operators are unary or binary prefix operators.
@@ -299,9 +301,6 @@ BIGGR OF <x> AN <y>     BTW max
 SMALLR OF <x> AN <y>    BTW min
 FLIP Of <x>             BTW 1/x
 SQUAR OF <x>            BTW x*x
-UNSQUAR OF <x>          BTW sqrt(x)
-POWR OF <x> AN <y>      BTW pow(x,y)
-ROOT OF <x> AN <y>      BTW pow(x,1/y)
 ```
 
 `<x>` and `<y>` may each be expressions in the above, so mathematical operators
@@ -335,10 +334,10 @@ lazily evaluated as need to determine the result.
 Comparison is done with two binary equality operators:
 
 ```
-BOTH SAEM <x> AN <y>   		BTW WIN if x == y
-DIFFRINT <x> AN <y>    		BTW WIN if x != y
-FURST SMALLR <x> AN <y>		BTW WIN if x < y
-FURST BIGGR  <x> AN <y>		BTW WIN if x > y
+BOTH SAEM <x> [AN] <y>   		BTW WIN if x == y
+DIFFRINT <x> [AN] <y>    		BTW WIN if x != y
+FURST SMALLR <x> [AN] <y>		BTW WIN if x < y
+FURST BIGGR  <x> [AN] <y>		BTW WIN if x > y
 ```
 
 Comparison operators will always yield FAIL if the types of the two operands
