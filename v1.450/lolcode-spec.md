@@ -427,13 +427,13 @@ in which case the carriage return is suppressed.
 VISIBLE <expression> [[AN] <expression> ...][!]
 ```
 
-To accept input from the user, the expression is
+To accept a character of input from the user, the expression is
 
 ```
-GIMMEH <type>
+GIMMEH
 ```
 
-where `<type>` is NUMBR, NUMBAR, LETTZ, or TROOF.
+which yields a LETTR from standard input.
 
 ---
 
