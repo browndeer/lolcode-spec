@@ -396,13 +396,12 @@ they are only used in the literal representation.
 
 ### Random Numbers
 
-To generate integer or floating point random numbers, the keywords
-`WHATEVR` and `WHATEVAR`, respectively, may be evaluated as expressions.
+To generate an integer random number, the keyword
+`WHATEVR` is evaluated as an expression. 
 For example,
 
 ```
 <var> R WHATEVR          BTW <var> is assigned a random integer 
-<var> R WHATEVAR         BTW <var> is assigned a random float
 ```
 
 ---
@@ -453,7 +452,7 @@ form,
 ```
 
 The following are examples of assignment operators: `UPPIN` and `NERFIN`.
-These operators only work on numerical types.
+These operators only work on NUMBRs.
 
 ```
 UPPIN x          BTW increment x by 1
@@ -465,9 +464,9 @@ NERFIN x BY y    BTW decrement x by y
 Note, all assignments are expressions and yield their newly assigned value:
 
 ```
-I HAS A x ITZ A NUMBAR ITZ 4         BTW x is 4
-I HAS A y ITZ A NUMBAR ITZ UPPIN x   BTW x and y are 5
-I HAS A z ITZ A NUMBAR ITZ x R 10    BTW z and x are 10 (y is still 5)
+I HAS A x ITZ A NUMBR ITZ 4         BTW x is 4
+I HAS A y ITZ A NUMBR ITZ UPPIN x   BTW x and y are 5
+I HAS A z ITZ A NUMBR ITZ x R 10    BTW z and x are 10 (y is still 5)
 ```
 
 ---
@@ -482,14 +481,14 @@ The traditional if/then construct is a very simple construct operating on the
 previous expression. In the base form, there are four keywords: 
 `O RLY?`, `YA RLY`, `NO WAI`, and `OIC`.
 
-`O RLY?` branches to the block begun with `YA RLY` if the expression can be cast to WIN, 
-and branches to the `NO WAI` block if the expression is FAIL. 
+`O RLY?` branches to the block begun with `YA RLY` if the expression is WIN, 
+and branches to the optional `NO WAI` block if the expression is FAIL. 
 The code block introduced with `YA RLY` is implicitly closed when `NO WAI` is reached. 
 The `NO WAI` block is closed with `OIC`. The general form is then as follows:
 
 ```
-<expression>
-O RLY?
+
+O RLY? <expression>
   YA RLY
     <code block>
   NO WAI
@@ -501,7 +500,7 @@ while an example showing the ability to put multiple statements on a line
 separated by a comma (virtual newline) would be:
 
 ```
-BOTH SAEM ANIMAL AN "CAT", O RLY?
+O RLY? BOTH SAEM ANIMAL AN "CAT"
   YA RLY, VISIBLE "J00 HAV A CAT"
   NO WAI, VISIBLE "J00 SUX"
 OIC
@@ -514,8 +513,7 @@ if not, the block is skipped until the following `MEBBE`, `NO WAI`, or `OIC`.
 The full expression syntax is then as follows:
 
 ```
-<expression>
-O RLY?
+O RLY? <expression>
   YA RLY
     <code block>
  [MEBBE <expression>
@@ -531,8 +529,8 @@ OIC
 An example of this conditional is then:
 
 ```
-BOTH SAEM ANIMAL AN "CAT"
-O RLY?
+
+O RLY? BOTH SAEM ANIMAL AN "CAT"
   YA RLY, VISIBLE "J00 HAV A CAT"
   MEBBE BOTH SAEM ANIMAL AN "MAUS"
     VISIBLE "NOM NOM NOM. I EATED IT."
@@ -639,11 +637,12 @@ and take the form below,
 ```
 IM IN YR LOOP [TIL|WILE <expression>]
   <code-block>
-IM OUTTA YR <label>
+IM OUTTA YR LOOP
 ```
 
-The `TIL <expression>` evaluates the expression as a TROOF: if it evaluates as
-FAIL, the loop continues once more, if not, then loop execution stops, and
+Before the code-block is executed, the `TIL <expression>` evaluates the expression 
+(which must yield a TROOF): if it evaluates as
+FAIL, the code-block executes, if not, then loop execution stops, and
 continues after the matching IM OUTTA YR LOOP. The `WILE <expression>` is the
 converse: if the expression is WIN, execution continues, otherwise the loop
 exits.
@@ -651,22 +650,21 @@ exits.
 Iteration loops include clauses for defining the iteration, and take the form,
 
 ```
-IM IN YR LOOP <operation> <variable> [FRUM <expression>] [BY <expression>] TIL|WILE <expression>
+IM IN YR LOOP <assignment-expression> TIL|WILE <conditional-expression>
   <code-block>
 IM OUTTA YR LOOP
 ```
 
-Where `<operation>` may be UPPIN (increment) or NERFIN (decrement)
-or any other assignment operator, 
-the `FRUM` clause defines the intial value of *variable*, 
-and the `BY` clause provides the argument to the assignment operator.
+Where `<assignment-expression>`  is UPPIN (increment) or NERFIN (decrement)
+or any other assignment expression. This expression is evaluated after every 
+code-block execution (but before the TIL/WHILE expression).
 
-The iteration variabe is temporary, and local to the loop. 
-
-As an example, the code below will count backwards from 10 to 4 by 2,
+As an example, the code below will count backwards from 20 to 10 by 2,
+(10, 8, 6, 4)
 
 ```
-IM IN YR LOOP NERFIN i FRUM 10 BY 2 TIL BOTH SAEM i AN 2
+I HAS A i AN ITZ A NUMBR AN ITZ 10
+IM IN YR LOOP NERFIN i BY 2 WILE FURSTBIGGR OF i AN 10
   VISIBLE i
 IM OUTTA YR LOOP
 ```
