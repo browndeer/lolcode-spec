@@ -165,8 +165,7 @@ to signify a negative number.
 A NUMBAR is a float (of fixed width, likely 64-bit). It is
 represented as a contiguous string of digits containing exactly one decimal
 point. (There need not be digits after the decimal point.) 
-Casting a NUMBAR to a NUMBR truncates the decimal portion of the
-floating point number. A NUMBAR may have a leading hyphen (`-`) to signify a
+A NUMBAR may have a leading hyphen (`-`) to signify a
 negative number.
 
 
@@ -213,16 +212,13 @@ x'Z 5 R 6         BTW assign array element 5 the value 6
 x'Z n R y         BTW assign array element n the value y
 ```
 
-Assignment between arrays of the same size is allowed, and assignment between
-arrays of different types implies the appropriate element-wise cast.  For
+Assignment between arrays of the same size (and type) is allowed.  For
 example,
 
 ```
 I HAS A x ITZ LOTZ A NUMBRS AN THAR IZ 20
 I HAS A y ITZ LOTZ A NUMBRS AN THAR IZ 20
-I HAS A z ITZ LOTZ A NUMBARS AN THAR IZ 20
 x R y      BTW assign all elements of y to x
-x R z      BTW assign all elements of z to x cast as integers
 ```
 
 
@@ -342,7 +338,7 @@ FURSTBIGGR  <x> [AN] <y>		BTW WIN if x > y
 Comparison operators will always yield FAIL if the types of the two operands
 do not have the same type. 
 
-### Concatenation Operator
+### Concatenation Operator ???
 
 An indefinite number of YARNs (zero or more) may be explicitly concatenated with the
 `SMOOSH...MKAY` operator. Arguments may optionally be separated with `AN`. As
@@ -359,7 +355,7 @@ BTW y is 3.
 ```
 
 
-### Casting
+### Casting ???
 
 An expression's value may be explicitly cast with the binary `MAEK` operator.
 
