@@ -500,7 +500,7 @@ while an example showing the ability to put multiple statements on a line
 separated by a comma (virtual newline) would be:
 
 ```
-O RLY? BOTH SAEM ANIMAL AN "CAT"
+O RLY? SAEM ANIMAL AN "CAT"
   YA RLY, VISIBLE "J00 HAV A CAT"
   NO WAI, VISIBLE "J00 SUX"
 OIC
@@ -530,9 +530,9 @@ An example of this conditional is then:
 
 ```
 
-O RLY? BOTH SAEM ANIMAL AN "CAT"
+O RLY? SAEM ANIMAL AN "CAT"
   YA RLY, VISIBLE "J00 HAV A CAT"
-  MEBBE BOTH SAEM ANIMAL AN "MAUS"
+  MEBBE SAEM ANIMAL AN "MAUS"
     VISIBLE "NOM NOM NOM. I EATED IT."
 OIC
 ```
@@ -624,9 +624,8 @@ exited with a GTFO break.  Below is an example of a simple loop.
 ```
 IM IN YR LOOP
   <code-block>
-  <expression>, O RLY?
-  YA RLY,
-      GTFO
+  O RLY? <expression>
+  YA RLY, GTFO
   OIC
 IM OUTTA YR LOOP
 ```
