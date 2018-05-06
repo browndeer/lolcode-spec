@@ -191,6 +191,7 @@ So an apostrophe is represented as `':''`.
 Arrays may be declared using the typing clause `ITZ LOTZ A
 <type>S` and size allocation clause `AN THAR IZ <size>`. 
 The type must be one of the previously described types.
+Size musy be a NUMBR expression.
 
 For example,
 
@@ -204,12 +205,12 @@ of floats of size n.
 
 Array elements are accessed with the `'Z` operator that takes the form
 `<array>'Z <index>`.  Array indexing begins with 0 like a proper programming
-language.  For example,
+language.  Assignment to elements of a array use `IN` and `PUT`. For example,
 
 ```
 I HAS A x ITZ LOTZ A NUMBRS AN THAR IZ 20
-x'Z 5 R 6         BTW assign array element 5 the value 6
-x'Z n R y         BTW assign array element n the value y
+IN x'Z 5 PUT 6         BTW assign array element 5 the value 6
+IN x'Z n PUT y         BTW assign array element n the value y
 ```
 
 Assignment between arrays of the same size (and type) is allowed.  For
@@ -240,9 +241,9 @@ Strings are synoymous with arrays of chars.
 ```
 
 I HAS A x ITZ LOTZ A LETTRS AN THAR IZ 3
-x'Z 0 R 'a'
-x'Z 1 R 'b'
-x'Z 2 R 'c'
+IN x'Z 0 PUT 'a'
+IN x'Z 1 PUT 'b'
+IN x'Z 2 PUT 'c'
 I HAS A y ITZ A YARN AN ITZ "abc" 
 
 BTW x and y have the same type and value
@@ -626,7 +627,7 @@ IM IN YR LOOP
   O RLY? <expression>
   YA RLY, GTFO
   OIC
-IM OUTTA YR LOOP
+NOW IM OUTTA YR LOOP
 ```
 
 Conditional loops require the clause `TIL <expression>` or `WILE <expression>`
@@ -635,7 +636,7 @@ and take the form below,
 ```
 IM IN YR LOOP [TIL|WILE <expression>]
   <code-block>
-IM OUTTA YR LOOP
+NOW IM OUTTA YR LOOP
 ```
 
 Before the code-block is executed, the `TIL <expression>` evaluates the expression 
@@ -650,7 +651,7 @@ Iteration loops include clauses for defining the iteration, and take the form,
 ```
 IM IN YR LOOP <assignment-expression> TIL|WILE <conditional-expression>
   <code-block>
-IM OUTTA YR LOOP
+NOW IM OUTTA YR LOOP
 ```
 
 Where `<assignment-expression>`  is UPPIN (increment) or NERFIN (decrement)
@@ -664,7 +665,7 @@ As an example, the code below will count backwards from 20 to 10 by 2,
 I HAS A i AN ITZ A NUMBR AN ITZ 10
 IM IN YR LOOP NERFIN i BY 2 WILE FURSTBIGGR OF i AN 10
   VISIBLE i
-IM OUTTA YR LOOP
+NOW IM OUTTA YR LOOP
 ```
 
 ---
