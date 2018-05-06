@@ -674,14 +674,17 @@ NOW IM OUTTA YR LOOP
 
 ### Definition
 
-A function is demarked with the opening keyword `HOW IZ I` and the closing
-keyword `IF U SAY SO`. The syntax is as follows:
+A function is demarked with the opening keywords `HOW IZ I` and the closing
+keywords `IF U SAY SO`. The syntax is as follows:
 
 ```
-HOW IZ I <function name> [YR <argument1> [AN YR <argument2> …]] MKAY
+HOW IZ I <function name> [YR <argument1> <type-declaration> [[AN] YR <argument2> <type-declaration>  ...]] MKAY
   <code block>
-IF U SAY SO
+IF U SAY SO <return type-declaration>
 ```
+
+`<type-declaration>` can be either `ITZ A NUMBR/NUMBAR/LETTR/TROOF/YARN` or 
+`ITZ LOTZ A NUMBRS/NUMBARS/LETTRS/TROOFS`
 
 The number of arguments in a function can only be defined as a fixed
 number. The `<argument>`s are single-word identifiers that act as variables
@@ -689,23 +692,8 @@ within the scope of the function's code. The calling parameters' values are
 then the initial values for the variables within the function's code block when
 the function is called.
 
-Function arguments are automatically statically typed based on the type of
-the expression passed as an argument.  As an example, the following code
-is valid and complies with the static typing of the language.
-
-```
-HOW IZ I FOO YR x AN YR y AN YR z MKAY
-  <code-block> 
-IF U SAY SO
-
-I HAS A x ITZ A NUMBR
-I HAS A y ITZ A NUMBAR
-I HAS A z ITZ A NUMBAR
-
-I IZ FOO YR x AN YR y AN YR z
-I IZ FOO YR y AN YR z AN YR x
-I IZ FOO YR z AN YR x AN YR y
-```
+Functions can only be defined at the file scope (not function declarations in 
+other more nested scopes).
 
 ### Returning
 
@@ -721,10 +709,34 @@ the expression returned.
 A function of given arity is called with:
 
 ```
-I IZ <function name> [YR <expression1> [AN YR <expression2> [AN YR <expression3> ...]]] MKAY
+I IZ <function name> [YR <expression1> [[AN] YR <expression2> [[AN] YR <expression3> ...]]] MKAY
 ```
 
 That is, an expression is formed by the function name followed by any
 arguments. Those arguments may themselves be expressions. The expressions'
 values are obtained before the function is called. The arity of the functions
 is determined in the definition.
+
+### Example
+```
+HAI 1.450
+HOW IZ I sum_of_array YR array ITZ LOTZ A NUMBRS AN YR start_value ITZ A NUMBR MKAY
+    I HAS A tally ITZ A NUMBR AN ITZ start_value
+    I HAS A index ITZ A NUMBR AN ITZ 0
+    IM IN YR LOOP UPPIN index TIL FURSTBIGGR OF LENGTHZ OF array AN index
+        tally R SUM OF tally AN array'Z index
+    NOW IM OUTTA YR LOOP
+    FOUND YR tally
+IF U SAY SO ITZ A NUMBR
+
+I HAS A my_array ITZ LOTZ A NUMBRS AN THAR IZ 4
+IN my_array'Z 0 PUT 1
+IN my_array'Z 1 PUT 10
+IN my_array'Z 2 PUT 100
+IN my_array'Z 3 PUT 1000
+
+I HAS A result ITZ A NUMBR
+result R I IZ sum_of_array YR my_array AN YR 5 MKAY
+VISIBLE result
+KTHXBYE
+```
