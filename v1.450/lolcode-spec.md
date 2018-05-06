@@ -717,18 +717,24 @@ arguments. Those arguments may themselves be expressions. The expressions'
 values are obtained before the function is called. The arity of the functions
 is determined in the definition.
 
-### Example
+### Function Example
 ```
 HAI 1.450
+
+OBTW
+The sum_of_array function takes an array of NUMBRS and a start_value (NUMBR)and
+returns the sum of all the values of the array and the start_value as a NUMBR
+TLDR
 HOW IZ I sum_of_array YR array ITZ LOTZ A NUMBRS AN YR start_value ITZ A NUMBR MKAY
     I HAS A tally ITZ A NUMBR AN ITZ start_value
     I HAS A index ITZ A NUMBR AN ITZ 0
-    IM IN YR LOOP UPPIN index TIL FURSTBIGGR OF LENGTHZ OF array AN index
-        tally R SUM OF tally AN array'Z index
+    IM IN YR LOOP UPPIN index WILE FURSTBIGGR LENGTHZ OF array AN index
+	tally R SUM OF tally AN array'Z index
     NOW IM OUTTA YR LOOP
     FOUND YR tally
 IF U SAY SO ITZ A NUMBR
 
+BTW The array is [1,10,100,1000]
 I HAS A my_array ITZ LOTZ A NUMBRS AN THAR IZ 4
 IN my_array'Z 0 PUT 1
 IN my_array'Z 1 PUT 10
@@ -737,6 +743,8 @@ IN my_array'Z 3 PUT 1000
 
 I HAS A result ITZ A NUMBR
 result R I IZ sum_of_array YR my_array AN YR 5 MKAY
+
+BTW result should be 5 + 1 + 10 + 100 + 1000 = 1116
 VISIBLE result
 KTHXBYE
 ```
