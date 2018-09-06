@@ -85,14 +85,14 @@ I HAS A VAR ITZ A NUMBAR AN ITZ 12
                  see, i have more comments here
                  and here
             TLDR
-I HAS A FISH ITZ A NUMBAR AN ITZ BOB
+I HAS A FISH ITZ A NUMBAR AN ITZ VAR
 ```
 
 ```
-I HAS A VAR ITZ ITZ A NUMBR AN 12 OBTW this is a long comment block
+I HAS A VAR ITZ A NUMBR AN ITZ 12 OBTW this is a long comment block
       see, i have more comments here
       and here
-TLDR, I HAS A FISH ITZ A NUMBR AN ITZ BOB
+TLDR, I HAS A FISH ITZ A NUMBR AN ITZ VAR
 ```
 
 ### File Creation
