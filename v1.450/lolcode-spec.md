@@ -99,10 +99,11 @@ TLDR, I HAS A FISH ITZ A NUMBR AN ITZ BOB
 
 All LOLCODE programs must be opened with the command `HAI`. `HAI` should then
 be followed with the current LOLCODE language version number (1.450, in this
-case). There is no current standard behavior for implementations to treat the
+case). There is no current standard behavior for implementations to use the
 version number, though.
 
 A LOLCODE program is closed by the keyword `KTHXBYE`.
+Note: the open and closing lines must exist on their own.
 
 ---
 
