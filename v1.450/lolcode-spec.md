@@ -305,8 +305,8 @@ SMALLR OF <x> [AN] <y>    BTW min
 can be nested and grouped indefinitely.
 
 Math operators require that the types on all arguments have the same type and that
-type must be numerical (NUMBR or NUMBAR). The expression yield the type of its
-arguments.
+type must be numerical (NUMBR or NUMBAR or TROOF). The expression yield the type of its
+arguments (except in the case of TROOFs which yield NUMBRs).
 
 
 ### Logical Operators
