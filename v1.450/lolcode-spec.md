@@ -213,14 +213,15 @@ language.  Assignment to elements of a array use `IN` and `PUT`. For example,
 I HAS A x ITZ LOTZ A NUMBRS AN THAR IZ 20
 IN x'Z 5 PUT 6         BTW assign array element 5 the value 6
 IN x'Z n PUT y         BTW assign array element n the value y
+VISIBLE x'Z 5          BTW prints of element 5 (the value 6)
 ```
 
-Assignment between arrays of the same size (and type) is allowed.  For
+Assignment between arrays makes a copy of the right hand-side.  For
 example,
 
 ```
 I HAS A x ITZ LOTZ A NUMBRS AN THAR IZ 20
-I HAS A y ITZ LOTZ A NUMBRS AN THAR IZ 20
+I HAS A y ITZ LOTZ A NUMBRS AN THAR IZ 10
 x R y      BTW assign all elements of y to x
 ```
 
@@ -239,14 +240,15 @@ don't require escaping, but double quotes do (with `:"`).
 For example, `"Josh's ferret is named :"CrashDown:""` represents the string 
 `Josh's ferret is named "CrashDown"`.
 
-Strings are synoymous with arrays of chars. 
+Strings are synoymous with arrays of LETTRs. 
 ```
 
 I HAS A x ITZ LOTZ A LETTRS AN THAR IZ 3
 IN x'Z 0 PUT 'a'
 IN x'Z 1 PUT 'b'
 IN x'Z 2 PUT 'c'
-I HAS A y ITZ A YARN AN ITZ "abc" 
+I HAS A y ITZ A YARN AN THAR IZ 99
+y R x
 
 BTW x and y have the same type and value
 ```
