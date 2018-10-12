@@ -646,7 +646,7 @@ NOW IM OUTTA YR LOOP
 Before the code-block is executed, the `TIL <expression>` evaluates the expression 
 (which must yield a TROOF): if it evaluates as
 FAIL, the code-block executes, if not, then loop execution stops, and
-continues after the matching IM OUTTA YR LOOP. The `WILE <expression>` is the
+continues after the matching NOW IM OUTTA YR LOOP. The `WILE <expression>` is the
 converse: if the expression is WIN, execution continues, otherwise the loop
 exits.
 
@@ -660,7 +660,7 @@ NOW IM OUTTA YR LOOP
 
 Where `<assignment-expression>`  is UPPIN (increment) or NERFIN (decrement)
 or any other assignment expression. This expression is evaluated after every 
-code-block execution (but before the TIL/WHILE expression).
+code-block execution (but before the TIL/WILE expression).
 
 As an example, the code below will count backwards from 20 to 10 by 2,
 (10, 8, 6, 4)
