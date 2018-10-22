@@ -666,8 +666,8 @@ As an example, the code below will count backwards from 20 to 10 by 2,
 (10, 8, 6, 4)
 
 ```
-I HAS A i AN ITZ A NUMBR AN ITZ 10
-IM IN YR LOOP NERFIN i BY 2 WILE FURSTBIGGR OF i AN 10
+I HAS A i ITZ A NUMBR AN ITZ 10
+IM IN YR LOOP NERFIN i BY 2 WILE FURSTBIGGR i AN 10
   VISIBLE i
 NOW IM OUTTA YR LOOP
 ```
