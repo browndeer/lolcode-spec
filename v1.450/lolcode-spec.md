@@ -732,7 +732,7 @@ TLDR
 HOW IZ I sum_of_array YR array ITZ LOTZ A NUMBRS AN YR start_value ITZ A NUMBR MKAY
     I HAS A tally ITZ A NUMBR AN ITZ start_value
     I HAS A index ITZ A NUMBR AN ITZ 0
-    IM IN YR LOOP UPPIN index WILE FURSTBIGGR LENGTHZ OF array AN index
+    IM IN YR LOOP UPPIN index TIL NOT FURSTBIGGR LENGTHZ OF array AN index
 	tally R SUM OF tally AN array'Z index
     NOW IM OUTTA YR LOOP
     FOUND YR tally
