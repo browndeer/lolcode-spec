@@ -547,7 +547,7 @@ OIC
 
 The LOLCODE keyword for switches is `WTF?`. The `WTF?` operates on the 
 expression value for comparison. A comparison block is opened by `OMG` 
-and must be a primitive literal (not YARN), not an expression. Each literal must be unique. 
+and must be a literal, not an expression. Each literal must be unique. 
 The `OMG` block can be followed by any number of statements and may be 
 terminated by a `GTFO`, which breaks to the end of the the `WTF` statement. 
 If an `OMG` block is not terminated by a `GTFO`, then the next `OMG` 
