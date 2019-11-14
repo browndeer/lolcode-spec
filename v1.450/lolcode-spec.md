@@ -560,8 +560,6 @@ must match.
 
 ```
 WTF? <expression>
-  OMG <value literal>
-    <code block>
  [OMG <value literal>
     <code block> ...]
  [OMGWTF
